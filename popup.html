@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>popup</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: 250px;
+        background-color: #eeeeed;
+      }
+      .box_item {
+        display: flex;
+        align-items: center;
+        padding: 6px;
+        font-size: 12px;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+      }
+      span {
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box_item" id="currentArea">
+        <img src="./img/currentpic.png" alt="" />
+        <span>截取当前可视区域</span>
+      </div>
+      <div class="box_item" id="fullPage">
+        <img src="./img/longpic.png" alt="" />
+        <span>截取整个页面</span>
+      </div>
+      <div class="box_item" id="customArea">
+        <img src="./img/freepic.png" alt="" />
+        <span>截取自定义区域</span>
+      </div>
+    </div>
+  </body>
+  <script src="./popup.js"></script>
+  <!-- 引入 JavaScript 文件 -->
+</html>

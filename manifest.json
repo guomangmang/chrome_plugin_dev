@@ -1,0 +1,74 @@
+{
+    "manifest_version": 3,
+    "name": "畅快截图",
+    "version": "1.0.0",
+    "description": "截图网页图片可以直接复制图片的文字",
+    "author": "郭磊",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "commands",
+        "tabCapture",
+        "storage",
+        "offscreen",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "lib/html2canvas.min.js",
+                "content-script.js"
+            ],
+            "css": [
+                "insert-css.css"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "img/logo.png",
+            "32": "img/icon.png",
+            "48": "img/logo48.png",
+            "128": "img/logo128.png"
+        }
+    },
+    "icons": {
+        "16": "img/logo.png",
+        "32": "img/icon.png",
+        "48": "img/logo48.png",
+        "128": "img/logo128.png"
+    },
+    "commands": {
+        "doocr": {
+            "suggested_key": {
+                "default": "Alt+W",
+                "mac": "Command+W"
+            },
+            "description": "Execute the action"
+        },
+        "doocr_current": {
+            "suggested_key": {
+                "default": "Alt+P",
+                "mac": "Command+P"
+            },
+            "description": "Execute the action1"
+        },
+        "doocr_capture_viewport": {
+            "suggested_key": {
+                "default": "Alt+O",
+                "mac": "Command+O"
+            },
+            "description": "Execute the action2"
+        }
+    }
+}
